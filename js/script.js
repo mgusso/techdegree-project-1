@@ -14,7 +14,27 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
-
+var quotes = [
+  { quote: "Never give up, for that is just the place and time that the tide will turn.",
+    source: "Harriet Beecher Stowe"
+  },
+  { quote: "Be not afraid of growing slowly, be afraid of standing still.",
+    source: "Chinese Proverb"
+  },
+  { quote: "Everything that happens, happens of necessity.",
+    source: "Arthur Schopenhauer"
+  },
+  { quote: "Every day, you have the power to choose our better history - by opening your hearts" +
+           "and minds, by speaking up for what you know is right.",
+    source: "Michelle Obama",
+    year: "2014"
+  },
+  { quote: "She believed she could, so she did.",
+    source: "R.S. Grey",
+    citation: "Scoring Widler"
+  }
+];
+console.log(quotes);
 
 
 
@@ -50,7 +70,7 @@ project 1 - A Random Quote Generator
   comment.
 ***/
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+//document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.

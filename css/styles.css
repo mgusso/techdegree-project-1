@@ -71,6 +71,14 @@ body {
   font-style: normal;
 }
 
+.category {
+  font-size: .75rem;
+}
+
+.category:before {
+  white-space: pre-line;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;

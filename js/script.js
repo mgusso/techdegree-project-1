@@ -19,7 +19,8 @@ var quotes = [
     source: "Harriet Beecher Stowe"
   },
   { quote: "Be not afraid of growing slowly, be afraid of standing still.",
-    source: "Chinese Proverb"
+    source: "Chinese Proverb",
+    category: "Philosophy"
   },
   { quote: "Everything that happens, happens of necessity.",
     source: "Arthur Schopenhauer"
@@ -31,7 +32,8 @@ var quotes = [
   },
   { quote: "She believed she could, so she did.",
     source: "R.S. Grey",
-    citation: "Scoring Widler"
+    citation: "Scoring Widler",
+    category: "Literary quote"
   }
 ];
 //console.log(quotes); //testing to see if the quotes object contains anything
@@ -78,6 +80,10 @@ function printQuote() {
 
   if(quoteInfo.citation){
     quoteHtmlString += '<span class = "citation">' + quoteInfo.citation + '</span>';
+  }
+
+  if(quoteInfo.category){
+    quoteHtmlString += '<span class = "category">' + '<br>' + quoteInfo.category + '</span>';
   }
 
   //add the ending paragraph tag to the quoteHtmlString

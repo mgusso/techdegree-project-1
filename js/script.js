@@ -34,7 +34,7 @@ var quotes = [
     citation: "Scoring Widler"
   }
 ];
-console.log(quotes);
+//console.log(quotes); //testing to see if the quotes object contains anything
 
 
 
@@ -48,7 +48,7 @@ function getRandomQuote (){
   return quotes[randomQuote];
 }
 
-console.log(getRandomQuote()); //testing to see if a random quote is being returned
+//console.log(Object.keys(getRandomQuote())); //testing to see if a random quote is being returned
 
 
 /***
@@ -63,6 +63,35 @@ console.log(getRandomQuote()); //testing to see if a random quote is being retur
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
+function printQuote() {
+  var quoteInfo = getRandomQuote();
+  var quoteHtmlString = "";
+
+  //Create appropriate HTML string
+  quoteHtmlString += '<p class = "quote">' + quoteInfo.quote + '</p>';
+  quoteHtmlString += '<p class = "source">' + quoteInfo.source;
+
+  //check for additional quote properties and finish building the inner html string
+  if(quoteInfo.year){
+    quoteHtmlString += '<span class = "year">' + quoteInfo.year + '</span>';
+  }
+
+  if(quoteInfo.citation){
+    quoteHtmlString += '<span class = "citation">' + quoteInfo.citation + '</span>';
+  }
+
+  //add the ending paragraph tag to the quoteHtmlString
+  quoteHtmlString += '</p>';
+
+  //testing to see if the string is being built correctly
+  //console.log(quoteHtmlString);
+
+  //Targeting the innerHTML of the 'quote-box' div and replacing it with the 
+  //newly constructed HTML
+  document.getElementById('quote-box').innerHTML = quoteHtmlString;
+
+
+}
 
 
 
@@ -74,7 +103,7 @@ console.log(getRandomQuote()); //testing to see if a random quote is being retur
   comment.
 ***/
 
-//document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.

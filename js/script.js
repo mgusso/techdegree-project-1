@@ -134,6 +134,7 @@ function printQuote() {
 ***/
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+setInterval(printQuote, 20000);
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.

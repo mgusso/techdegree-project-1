@@ -52,6 +52,27 @@ function getRandomQuote (){
 
 //console.log(Object.keys(getRandomQuote())); //testing to see if a random quote is being returned
 
+/***
+  This function gets a random number between 0 and 255
+ ***/
+function getRandomNumber(){
+  return Math.floor(Math.random() * 256);
+}
+
+/***
+  This fuction changes the background color of the page using a randomly
+  constructed RGB color.
+ ***/
+function randomBackgroundColor(){
+  //generate three separate random numbers
+  var r = getRandomNumber();
+  var g = getRandomNumber();
+  var b = getRandomNumber();
+
+  return 'rgb(' + r + ',' + g + ',' + b + ')';
+
+}
+
 
 /***
   Create the `printQuote` function to: 
@@ -96,6 +117,9 @@ function printQuote() {
   //newly constructed HTML
   document.getElementById('quote-box').innerHTML = quoteHtmlString;
 
+  //Targeting the documents' background color to change it to the randomly generated rgb color
+  //console.log(randomBackgroundColor());
+  document.body.style.backgroundColor = randomBackgroundColor();
 
 }
 

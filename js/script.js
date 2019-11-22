@@ -1,6 +1,8 @@
 /******************************************
+Author: Mary Grace A. Gusso
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
+Attempted Grade: Exceeds Expectations
 ******************************************/
 
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
@@ -114,12 +116,14 @@ function printQuote() {
   //console.log(quoteHtmlString);
 
   //Targeting the innerHTML of the 'quote-box' div and replacing it with the 
-  //newly constructed HTML
+  //newly constructed HTML string 
   document.getElementById('quote-box').innerHTML = quoteHtmlString;
 
   //Targeting the documents' background color to change it to the randomly generated rgb color
   //console.log(randomBackgroundColor());
-  document.body.style.backgroundColor = randomBackgroundColor();
+  var randomColor = randomBackgroundColor();
+  document.body.style.backgroundColor = randomColor;
+  document.getElementById('loadQuote').style.backgroundColor = randomColor;
 
 }
 
@@ -129,12 +133,14 @@ function printQuote() {
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
+  function. 
+
+  setInterval is used to call the printQuote every 15 seconds.
 ***/
 
+setInterval(printQuote, 15000);
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-setInterval(printQuote, 20000);
+
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.

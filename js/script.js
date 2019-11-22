@@ -51,13 +51,6 @@ function getRandomQuote (){
 
 //console.log(Object.keys(getRandomQuote())); //testing to see if a random quote is being returned
 
-/***
-  This function gets a random number between 0 and 255.
-  Function outout: a random number between 0 and 255.
- ***/
-function getRandomNumber(){
-  return Math.floor(Math.random() * 256);
-}
 
 /***
   This fuction gets three different random numbers, each stored in their own variable.
@@ -66,9 +59,9 @@ function getRandomNumber(){
  ***/
 function randomBackgroundColor(){
   //generate three separate random numbers
-  var r = getRandomNumber();
-  var g = getRandomNumber();
-  var b = getRandomNumber();
+  var r = Math.floor(Math.random() * 256);
+  var g = Math.floor(Math.random() * 256);
+  var b = Math.floor(Math.random() * 256);
 
   return 'rgb(' + r + ',' + g + ',' + b + ')';
 

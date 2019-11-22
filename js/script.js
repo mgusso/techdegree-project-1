@@ -9,12 +9,9 @@ Attempted Grade: Exceeds Expectations
 
 
 /*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
+  This array holds objects that contain information about a given quote.
+  Each object in the array contains a quote and source property and some contain 
+  additional properties. These aditional properties could be: category, year, citation.
 ***/
 var quotes = [
   { quote: "Never give up, for that is just the place and time that the tide will turn.",
@@ -43,9 +40,9 @@ var quotes = [
 
 
 /***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+  This function calculates a random number between 0 and the length of the quotes
+  array. The object that lives at that calculated index of the quote array is returned.
+  Function output: A object from the quotes array.
 ***/
 function getRandomQuote (){
   var randomQuote = Math.floor(Math.random() * quotes.length);
@@ -55,15 +52,17 @@ function getRandomQuote (){
 //console.log(Object.keys(getRandomQuote())); //testing to see if a random quote is being returned
 
 /***
-  This function gets a random number between 0 and 255
+  This function gets a random number between 0 and 255.
+  Function outout: a random number between 0 and 255.
  ***/
 function getRandomNumber(){
   return Math.floor(Math.random() * 256);
 }
 
 /***
-  This fuction changes the background color of the page using a randomly
-  constructed RGB color.
+  This fuction gets three different random numbers, each stored in their own variable.
+  A string is constructed int he return statement. 
+  Function output: a string representing a rgb value.
  ***/
 function randomBackgroundColor(){
   //generate three separate random numbers
@@ -77,16 +76,11 @@ function randomBackgroundColor(){
 
 
 /***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
+  This function captures a quote object into the local variable quoteInfo. Using that
+  a string is constructed that will be used target the inner HTML of the 'quote-box'
+  div in the index.html file. The string is built based on the properties the object
+  has.
+  The background of the page and the 'Show Another Quote' button are also updated.
 ***/
 function printQuote() {
   var quoteInfo = getRandomQuote();
@@ -134,10 +128,9 @@ function printQuote() {
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
   function. 
-
-  setInterval is used to call the printQuote every 15 seconds.
 ***/
 
+// display a new quote every 15 seconds
 setInterval(printQuote, 15000);
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
